@@ -1,4 +1,5 @@
 // pages/search/search.js
+var baseurl = 'http://route.showapi.com/268-1?showapi_appid=86487&showapi_sign=881ca6acc8d04652a930b9bf5142aed7'
 Page({
 
   /**
@@ -7,7 +8,26 @@ Page({
   data: {
 
   },
-
+  loadData:function(url){
+    var that = this;
+    wx.request({
+      url: url,
+      method:'GET',
+      success:function(res){
+        var loaddata = res.data.showapi_res_body.pagebean.contentlist;
+        that.setData({
+          tourdata:loaddata});
+        console.log(that.data);
+      },
+      fail:function(error){
+        console.log(2)
+      }
+    })
+  },
+  searchData:function(e){
+    var text = e.detail.value;
+    this.loadData(baseurl + '&keyword=' + text);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

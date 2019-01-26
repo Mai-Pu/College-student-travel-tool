@@ -2,6 +2,6 @@
 <view class='search-all'>
   <view class="search">
     <icon class="search-icon" type='search' size='13' color='#405f50'></icon>
-    <input type='text' placeholder="输入城市名或景点" placeholder-class="placeholder" focus='true'/>
+    <input type='text' placeholder="输入城市名或景点" placeholder-class="placeholder" focus='true' bindblur='searchData'/>
   </view>
 </view>
