@@ -2,6 +2,14 @@
 <view class='search-all'>
   <view class="search">
     <icon class="search-icon" type='search' size='13' color='#405f50'></icon>
-    <input type='text' placeholder="输入城市名或景点" placeholder-class="placeholder" focus='true' bindblur='searchData'/>
+    <input type='text' placeholder="输入城市名或景点" placeholder-class="placeholder" focus='true' bindblur='searchData' />
   </view>
+  <scroll-view scroll-y='true' style="height: 850rpx">
+  <block wx:for="{{tourdata}}" wx:key="key">
+    <view class='search-answer' bindtap='tapAnswer' data-name="{{item}}">
+      <text class='name'>{{item.name}}</text>
+      <text class='introduction'>{{item.summary}}</text>
+    </view>
+  </block>
+  </scroll-view>
 </view>

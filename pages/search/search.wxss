@@ -1,12 +1,12 @@
 /* pages/search/search.wxss */
 /*page{
   height: 100%
-}*/
+}
 .search-all {
   height: 100%;
   display: flex;
   align-items: center;
-}
+}*/
 
 .search {
   background-color: #f2f2f2;
@@ -14,7 +14,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  
+  margin-bottom: 50rpx;
 }
 
 .search-icon {
@@ -26,4 +26,31 @@
   width: 600rpx;
   margin-left: 20px;
   font-size: 28rpx;
+}
+
+.search-answer{
+  display: flex;
+  flex-direction: column;
+  margin-bottom:20rpx; 
+  background-color: white;
+  border-top: 1px solid rgb(189, 214, 213);
+  border-bottom: 1px solid rgb(189, 214, 213); 
+  padding-bottom:5rpx; 
+}
+
+.name{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+}
+
+.introduction{
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-left: 10rpx;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
 }
