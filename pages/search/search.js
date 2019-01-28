@@ -1,5 +1,5 @@
 // pages/search/search.js
-var baseurl = 'http://route.showapi.com/268-1?showapi_appid=86487&showapi_sign=881ca6acc8d04652a930b9bf5142aed7'
+var baseurl = 'https://route.showapi.com/268-1?showapi_appid=86487&showapi_sign=881ca6acc8d04652a930b9bf5142aed7'
 Page({
 
   /**
@@ -34,8 +34,8 @@ Page({
       });
   },
   tapAnswer: function(event) {
-    var name = event.currentTarget.dataset.name;
-    console.log(name);
+    var what = event.currentTarget.dataset.what;
+    console.log(what);
   },
   /**
    * 生命周期函数--监听页面加载
