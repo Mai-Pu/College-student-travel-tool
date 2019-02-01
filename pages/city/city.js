@@ -14,10 +14,11 @@ Page({
   onLoad: function (option) {
     var id;
     id = wx.getStorageSync('city')
+
     console.log(id)
     // var name = id.proName
     // console.log(name)
-    // this.setData({ send: name })
+    this.setData({ send: id })
     // console.log(option.query)
     // this.setData({options:options})
   },

@@ -1,4 +1,5 @@
 <!--pages/mine/mine.wxml-->
 <view class="content">
-<view>cityname,{{id.proName}}</view>
+<view>cityname,{{send.proName}}</view>
+<image src="{{ send.picList(2).picUrl }}"></image>
 </view>
