@@ -13,13 +13,8 @@ Page({
    */
   onLoad: function (option) {
     var id;
-    wx.getStorage({
-      key: 'city',
-      success: function (res) {
-        id = res.data,
-        console.log(id)
-      }
-    })
+    id = wx.getStorageSync('city')
+    console.log(id)
     // var name = id.proName
     // console.log(name)
     // this.setData({ send: name })
