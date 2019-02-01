@@ -1,0 +1,4 @@
+<!--pages/mine/mine.wxml-->
+<view class="content">
+<view>cityname,{{id.proName}}</view>
+</view>

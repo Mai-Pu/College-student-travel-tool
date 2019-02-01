@@ -35,7 +35,14 @@ Page({
   },
   tapAnswer: function(event) {
     var what = event.currentTarget.dataset.what;
-    console.log(what);
+    // console.log(what.id);
+    wx.navigateTo({
+      url: '../city/city'
+    })
+    wx.setStorage({
+      key: "city",
+      data: what
+    })
   },
   /**
    * 生命周期函数--监听页面加载
