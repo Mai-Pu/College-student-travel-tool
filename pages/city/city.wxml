@@ -1,5 +1,25 @@
 <!--pages/mine/mine.wxml-->
+<view class='cont'>
+
+<view class='today'>
+
+<view class='info'>
+
+<view class='tempe'>{{today.wendu}}°C</view>
+
+<view class='weather'>{{today.todayInfo.type}}{{today.todayInfo.fengxiang}}</view>
+
+<view>温馨提示：{{today.ganmao}}</view>
+
+<view class='city'>{{city}}</view>
+
+</view>
+
+</view>
+
+</view>
 <view class="content">
-<view>cityname,{{send.proName}}</view>
-<image src="{{ send.picList(2).picUrl }}"></image>
+<view class='tempe'>{{send.name}}</view>
+<image src="{{ send.picList[0].picUrl }}"></image>
+<text class='introduction'>{{ send.priceList.summary }}</text>
 </view>

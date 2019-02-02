@@ -6,7 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    send:''
+    send: '',
+
+    city: "",
+
+    today: {},
+
+    future: {},
   },
   /**
    * 生命周期函数--监听页面加载
@@ -14,13 +20,50 @@ Page({
   onLoad: function (option) {
     var id;
     id = wx.getStorageSync('city')
-
     console.log(id)
-    // var name = id.proName
-    // console.log(name)
     this.setData({ send: id })
-    // console.log(option.query)
-    // this.setData({options:options})
+    this.setData({ city: id.cityName })
+    this.loadWeather();
+  },
+
+  loadWeather: function (city) {
+
+    var page = this;
+    city = this.data.city+"市"
+    // console.log(city);
+    wx.request({
+
+      url: 'http://wthrcdn.etouch.cn/weather_mini?city=' + city,
+
+      header: {
+
+        'content-type': 'application/json'
+
+      },
+
+      success: function (res) {
+
+        // console.log(res);
+
+        var future = res.data.data.forecast;
+
+        var todayInfo = future.shift();
+
+        var today = res.data.data;
+
+        today.todayInfo = todayInfo;
+
+        page.setData({
+
+          today: today,
+
+          future: future,
+
+        });
+        // console.log(city)
+
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -24,6 +24,7 @@
         "iconPath": "icon/discovery.png",
         "selectedIconPath": "icon/discovery_focus.png"
       },
+      
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",

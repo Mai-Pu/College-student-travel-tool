@@ -1,0 +1,93 @@
+.cont{
+
+font-size:30rpx;
+
+width:100%;
+
+height:100%;
+
+}
+
+.today{
+
+padding:50rpx 0 0 0;
+
+height:50%;
+
+}
+
+.info{
+
+padding:20rpx;
+
+background:rgba(0,0,0,.8);
+
+line-height: 1.5em;
+
+color:#eee;
+
+}
+
+.tempe{
+
+font-size:90rpx;
+
+text-align: center;
+
+margin:30rpx 0;
+
+}
+
+.weather{
+
+text-align: center;
+
+}
+
+.city{
+
+font-size:40rpx;
+
+color:#f60;
+
+text-align: right;
+
+margin: 30rpx 10rpx 0 0;
+
+}
+
+.future{
+
+display:flex;
+
+flex-direction: row;
+
+height:100%;
+
+padding:20rpx 0 20rpx 10rpx;
+
+background:rgba(0,0,0,.8);
+
+text-align: center;
+
+margin:50rpx 0 70rpx 0;
+
+color:#eee;
+
+}
+
+.future-item{
+
+min-height: 100%;
+
+width:160rpx;
+
+margin: 0 10rpx;
+
+border:solid 1px #f90;
+
+padding:10rpx 0 0 0;
+
+line-height:2em;
+
+}
