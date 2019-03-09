@@ -1,18 +1,17 @@
 // pages/search/search.js
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     send: '',
-
     city: "",
-
     today: {},
-
     future: {},
+
+    imgUrls: [],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000
   },
   /**
    * 生命周期函数--监听页面加载
@@ -23,7 +22,7 @@ Page({
     console.log(id)
     this.setData({ send: id })
     this.setData({ city: id.cityName })
-    this.loadWeather();
+    // this.loadWeather();//天气方法
   },
 
   loadWeather: function (city) {
@@ -60,9 +59,28 @@ Page({
           future: future,
 
         });
-        // console.log(city)
 
       }
+    })
+  },
+  changeIndicatorDots(e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay(e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange(e) {
+    this.setData({
+      duration: e.detail.value
     })
   },
   /**

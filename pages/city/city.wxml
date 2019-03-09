@@ -20,6 +20,20 @@
 </view>
 <view class="content">
 <view class='tempe'>{{send.name}}</view>
-<image src="{{ send.picList[0].picUrl }}"></image>
-<text class='introduction'>{{ send.priceList.summary }}</text>
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block wx:for="{{send.picList}}">
+    <swiper-item>
+      <image src="{{item.picUrl}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- <image src="{{ send.picList[0].picUrl }}"></image> -->
+<text class='introduction'>{{ send.summary }}</text>
+<button>添加行程</button>
+
 </view>
