@@ -63,25 +63,16 @@ Page({
       }
     })
   },
-  changeIndicatorDots(e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
+  addtomine: function (){
+    wx.setStorage({
+      key: 'trip',
+      data: send.cityName,
     })
-  },
-  changeAutoplay(e) {
-    this.setData({
-      autoplay: !this.data.autoplay
+    wx.redirectTo({
+      url: '../mine/mine'
     })
-  },
-  intervalChange(e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange(e) {
-    this.setData({
-      duration: e.detail.value
-    })
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

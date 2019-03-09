@@ -17,6 +17,7 @@ Page({
   onLoad: function (options) {
     var stu = wx.getStorageSync('student');
     this.setData({ myinfo: stu });
+    var trips = wx.getStorageSync(trip)
     // console.log(this.data.myinfo);
   },
   exit: function (e) {
@@ -29,7 +30,8 @@ Page({
           wx.removeStorageSync('student');
           //页面跳转
           wx.redirectTo({
-            url: '../login/login',
+            // url: '../login/login',
+            url: '',
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
