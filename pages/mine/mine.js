@@ -4,10 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // onPullDownRefresh: function () {
-    //   wx.stopPullDownRefresh()
-    // },
-    myinfo: null
+
+    myinfo: null,
+    trips: []
 
   },
 
@@ -16,9 +15,10 @@ Page({
    */
   onLoad: function (options) {
     var stu = wx.getStorageSync('student');
+    this.setData({ trips: wx.getStorageSync('trip')})
     this.setData({ myinfo: stu });
-    var trips = wx.getStorageSync(trip)
-    // console.log(this.data.myinfo);
+    // var trips = wx.getStorageSync(trip)
+    console.log(this.data.trips)
   },
   exit: function (e) {
     wx.showModal({

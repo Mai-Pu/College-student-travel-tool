@@ -13,15 +13,13 @@ Page({
     interval: 3000,
     duration: 1000
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (option) {
     var id;
-    id = wx.getStorageSync('city')
-    console.log(id)
-    this.setData({ send: id })
-    this.setData({ city: id.cityName })
+    id = wx.getStorageSync('city');
+    this.setData({ send: id });
+    this.setData({ city: id.cityName });
+    // console.log(this.data.trips);
     // this.loadWeather();//天气方法
   },
 
@@ -29,7 +27,6 @@ Page({
 
     var page = this;
     city = this.data.city+"市"
-    // console.log(city);
     wx.request({
 
       url: 'http://wthrcdn.etouch.cn/weather_mini?city=' + city,
@@ -41,8 +38,6 @@ Page({
       },
 
       success: function (res) {
-
-        // console.log(res);
 
         var future = res.data.data.forecast;
 
@@ -64,9 +59,10 @@ Page({
     })
   },
   addtomine: function (){
+    getApp().globalData.trips.push(this.data.send.name)
     wx.setStorage({
       key: 'trip',
-      data: send.cityName,
+      data: getApp().globalData.trips,
     })
     wx.redirectTo({
       url: '../mine/mine'

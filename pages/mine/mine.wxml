@@ -9,8 +9,12 @@
     </view>
   </view>
     <view class='item'>
-      <text class='left'>我的行程：</text><text class='right'>{{myinfo.no}}</text>
-      <text>{{trips}}</text>
+      <text class='left'>我的行程：</text>
+      <block wx:for="{{trips}}" data-item="item" >
+        <view>
+        <text>{{item}} \n</text>
+        </view>
+      </block>
     </view>
     <view class='item' bindtap='exit'>
       <text class='left'>退出：</text><text class='right'>>>></text>
