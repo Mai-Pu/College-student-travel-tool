@@ -9,11 +9,14 @@ Page({
     trips: []
 
   },
+  onShow: function () {
+    this.onLoad();
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     var stu = wx.getStorageSync('student');
     this.setData({ trips: wx.getStorageSync('trip')})
     this.setData({ myinfo: stu });
@@ -50,5 +53,9 @@ Page({
     wx.navigateTo({
       url: '../email/email?no=' + no,
     })
-  }
+  },
+
+  cutout: function(){
+    
+  },
 })

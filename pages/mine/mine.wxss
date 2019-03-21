@@ -25,8 +25,16 @@
 }
 .right{
   display: flex;
+  position: fixed;
   justify-content: flex-end;
+  bottom: 0px;
   flex-grow: 1;
   color: #ccc;
-  margin-right: 20rpx;
+  margin-left: 600rpx;
+}
+.logo{
+  position: fixed;
+  bottom:0px;
+  display: flex;
+  justify-content: flex-start;
 }

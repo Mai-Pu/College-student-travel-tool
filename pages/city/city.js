@@ -59,7 +59,8 @@ Page({
     })
   },
   addtomine: function (){
-    getApp().globalData.trips.push(this.data.send.name)
+    getApp().globalData.trips.push(this.data.send.name);
+    console.log(getApp().globalData.trips);
     wx.setStorage({
       key: 'trip',
       data: getApp().globalData.trips,
@@ -67,8 +68,8 @@ Page({
     wx.redirectTo({
       url: '../mine/mine'
     })
-
-
+    console.log(getApp().globalData.trips);
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
