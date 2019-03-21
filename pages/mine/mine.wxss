@@ -38,3 +38,7 @@
   display: flex;
   justify-content: flex-start;
 }
+
+.button{
+  margin-left: 600rpx; 
+}

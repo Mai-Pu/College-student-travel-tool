@@ -16,12 +16,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function (e) {
     var stu = wx.getStorageSync('student');
     this.setData({ trips: wx.getStorageSync('trip')})
     this.setData({ myinfo: stu });
+    // var tem = this.data.trips.splice(e,1);
+    // this.setData({trips:tem});
     // var trips = wx.getStorageSync(trip)
-    console.log(this.data.trips)
+    
   },
   exit: function (e) {
     wx.showModal({
@@ -55,7 +57,12 @@ Page({
     })
   },
 
-  cutout: function(){
-    
+  cutout: function(e){
+    var index = e.target.dataset.index;
+    console.log(index);
+    var tem = this.data.trips;
+    tem.splice(index,1);
+    // this.data.trips.splice(index,1);
+    this.setData({trips: tem});
   },
 })

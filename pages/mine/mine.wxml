@@ -13,12 +13,12 @@
       <!-- <block > -->
       <!-- </block> -->
     </view>
-    <view wx:for="{{trips}}" data-item="item">
-      <text>{{item}}</text><icon type="clear" size="20"/>
-      <text>\n</text>
+    <view wx:for="{{trips}}" data-item="item" wx:for-index="idx">
+      <text>{{item}}</text>
+      <button bindtap='cutout' data-index="{{idx}}" size='mini'>删除</button>
+      <!-- <text>\n</text> -->
     </view>
   <view class='item' bindtap='exit'>
     <text class='logo'>退出：</text><text class='right'>>>></text>
   </view>
-  
 </view>
