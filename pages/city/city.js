@@ -20,13 +20,13 @@ Page({
     this.setData({ send: id });
     this.setData({ city: id.cityName });
     // console.log(this.data.trips);
-    // this.loadWeather();//天气方法
+    this.loadWeather();//天气方法
   },
 
   loadWeather: function (city) {
 
     var page = this;
-    city = this.data.city+"市"
+    city = this.data.city + "市"
     wx.request({
 
       url: 'http://wthrcdn.etouch.cn/weather_mini?city=' + city,
@@ -58,9 +58,8 @@ Page({
       }
     })
   },
-  addtomine: function (){
+  addtomine: function () {
     getApp().globalData.trips.push(this.data.send.name);
-    console.log(getApp().globalData.trips);
     wx.setStorage({
       key: 'trip',
       data: getApp().globalData.trips,

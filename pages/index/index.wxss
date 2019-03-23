@@ -1,21 +1,23 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@import "../../components/trip/trip.wxss";
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+page{
+  background-color: #f6f6f6;
+}
+.list{
+}
+.m-trip{
   margin: 20rpx;
-  border-radius: 50%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.trip-title{
+  margin-bottom: 10rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.loading{
+  color: #b0b0b0;
+  text-align: center;
+  margin: 20rpx 0;
+}
+.loading-gif{
+  width: 220rpx;
+  height: 42rpx;
+  vertical-align: bottom;
 }

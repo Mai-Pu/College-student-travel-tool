@@ -1,1 +1,4 @@
-{}
+{
+  "navigationBarTitleText": "Go",
+  "enablePullDownRefresh": true
+}

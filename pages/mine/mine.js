@@ -18,12 +18,13 @@ Page({
    */
   onLoad: function (e) {
     var stu = wx.getStorageSync('student');
-    this.setData({ trips: wx.getStorageSync('trip')})
+    this.setData({ trips: getApp().globalData.trips })
     this.setData({ myinfo: stu });
+    // console.log()
     // var tem = this.data.trips.splice(e,1);
     // this.setData({trips:tem});
     // var trips = wx.getStorageSync(trip)
-    
+
   },
   exit: function (e) {
     wx.showModal({
@@ -57,12 +58,13 @@ Page({
     })
   },
 
-  cutout: function(e){
+  cutout: function (e) {
     var index = e.target.dataset.index;
     console.log(index);
     var tem = this.data.trips;
-    tem.splice(index,1);
+    tem.splice(index, 1);
+    getApp().globalData.trips = tem
     // this.data.trips.splice(index,1);
-    this.setData({trips: tem});
+    this.setData({ trips : tem });
   },
 })
